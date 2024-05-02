@@ -8,6 +8,8 @@ import {
   SignedOut,
   UserButton,
 } from '@clerk/nextjs';
+import ModalProvider from '@/providers/modal-provider';
+import ToastProvider from '@/providers/toast-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -33,7 +35,10 @@ export default function RootLayout({
               <UserButton />
             </SignedIn>
           </header>
-          <main>{children}</main>
+          <main>
+            <ToastProvider />
+            {children}
+          </main>
         </body>
       </html>
     </ClerkProvider>
