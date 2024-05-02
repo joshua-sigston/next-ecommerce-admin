@@ -18,7 +18,7 @@ generator client {
 model Store {
   id        String   @id @default(uuid())
   name      String
-  user      String
+  userId    String
   createdAt DateTime @default(now())
   updateAt  DateTime @updatedAt
 }
